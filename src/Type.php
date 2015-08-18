@@ -43,11 +43,11 @@
 		}
 		
 		static function find ($search_id) {
-			$foud_type = null;
+			$found_type = null;
 			$types = Type::getAll();
 			foreach($types as $type) {
 				$type_id = $type->getId();
-				if($type_id = $search_id) {
+				if($type_id == $search_id) {
 					$found_type = $type;
 				}
 			}

@@ -18,9 +18,9 @@
 		return $app['twig']->render('index.html.twig', array('types' => Type::getAll()));
 	});
 	
-	$app->get("/animals", function() use ($app) {
-		return $app['twig']->render('animals.html.twig', array('animals' => Animal::getAll()));
-	});
+	// $app->get("/animals", function() use ($app) {
+	// 	return $app['twig']->render('animals.html.twig', array('animals' => Animal::getAll()));
+	// });
 	
 	$app->get("/types", function() use ($app) {
 		return $app['twig']->render('types.html.twig', array('types' => Type::getAll()));
