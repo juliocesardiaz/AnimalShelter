@@ -1,0 +1,29 @@
+<html>
+	<head>
+		<title>Animal Shelter</title>
+	</head>
+	<body>
+		<h1>Welcome to The Animal Shelter</h1>
+		<p>Create a new Animal Type</p>
+		
+		<form action="/types" method="post">
+			<label for="name">Type Name:</label>
+			<input id="name" name="name" type="text">
+		</form>
+		
+		{% if types is not empty %}
+			<p>Here Are The Types of Animals</p>
+			<ul>
+				{% for type in types %}
+					<li><a href="/types/{{ type.getId }}">{{ type.getName }}</a></li>
+				{% endfor %}
+			</ul>
+		{% else %}
+			<p>There are no Types Yet</p>
+		{% endif %}
+		
+		<form action="/delete_types" method="post">
+            <button type="submit">Clear List</button>
+        </form>
+	</body>
+</html>

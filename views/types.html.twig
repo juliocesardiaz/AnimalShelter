@@ -1,0 +1,39 @@
+<html>
+	<head>
+		<title>Animal Shelter</title>
+	</head>
+	<body>
+		<h1>{{ types.getName }}</h1>
+		
+		{% if animals is not empty %}
+			<p>Here are the Animals: </p>
+			<ul>
+				{% for animal in animals %}
+				<li>{{ animal.getName }}</li>
+				<ul>
+					<li>{{ animal.getBreed }}</li>
+					<li>{{ animal.getGender }}</li>
+					<li>{{ animal.getAge }}</li>
+				</ul>
+				{% endfor %}
+			</ul>
+		{% endif %}
+		
+		<h4>Add an Animal</h4>
+	
+	<form action='/animals' method='post'>
+		<input id="type_id" name="type_id" type="hidden" value="{{ types.getId() }}">
+		<label for='name'>Name</label>
+		<input id='name' name='name' type='text'>
+		<label for='gender'>Gender</label>
+		<input id='gender' name='gender' type='text'>
+		<label for='breed'>Breed</label>
+		<input id='breed' name='breed' type='text'>
+		<label for='age'>Age</label>
+		<input id='age' name='age' type='number'>
+		<button type='submit'>Add Animal</button>
+	</form>
+	
+	<p><a href='/'>Home</a></p>
+	</body>
+</html>
